@@ -18,9 +18,14 @@
 
 // UI variables
 
-@base-background-color: lighten(@app-background-color, 5%);
+@base-background-color: @app-background-color;
+@base-border-color: @base-background-color;
+
+@base-border-color-defined: lighten(@black, 50%);
+@base-border-color-highlight: lighten(@tab-border-color, 20%);
+
 @app-background-color: @black;
-@app-background-color-contrasted: lighten(@app-background-color, 5%);
+@app-background-color-contrasted: lighten(@black, 30%);
 
 // Text colors
 
@@ -47,25 +52,27 @@
 @background-color-error: darken(@text-color-error, 45%);
 @background-color-selected: darken(@text-color-info, 55%);
 @background-color-highlight: fade(@white, 9%);
-@app-background-color: @black;
-@app-background-color-contrasted: lighten(@black, 30%);
-@base-background-color: @app-background-color;
-@base-border-color: @base-background-color;
 
 // Component colors
 
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
+
 @input-background-color: @app-background-color-contrasted;
 @input-border-color: @base-border-color;
+
 @tool-panel-background-color: @base-background-color;
 @tool-panel-border-color: @base-border-color;
+
 @inset-panel-background-color: @app-background-color;
 @inset-panel-border-color: @base-border-color;
+
 @panel-heading-background-color: @app-background-color;
 @panel-heading-border-color: fadein(@base-border-color, 10%);
+
 @overlay-background-color: @app-background-color;
 @overlay-border-color: @background-color-highlight;
+
 @button-background-color: lighten(@app-background-color-contrasted, 2%);
 @button-background-color-hover: lighten(@button-background-color, 5%);
 @button-background-color-selected: @app-background-color;
@@ -75,10 +82,12 @@
 @tab-bar-border-color: @app-background-color;
 @tab-background-color: @app-background-color;
 @tab-background-color-active: @app-background-color-contrasted;
-@tab-border-color: lighten(@black, 50%);
+@tab-border-color: @base-border-color-defined;
+@tab-border-color-selected: @base-border-color-highlight;
 
 @tree-view-background-color: @base-background-color;
 @tree-view-border-color: @base-border-color;
+
 @scrollbar-background-color: @app-background-color;
 @scrollbar-color: fade(@black, 0.5);
 
