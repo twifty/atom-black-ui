@@ -1,0 +1,89 @@
+
+// Tabs
+// -------------------
+// Displays selectable tabs above the editor.
+// Overrides: atom/tabs
+@tab-top-padding: 3px;
+@tab-bottom-border-height: 1px;
+@tab-border: 1px solid @tab-border-color;
+@tab-border-selected: 1px solid lighten(@tab-border-color, 20%);
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  padding: 0 10px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    border-bottom: 1px solid @tab-border-color;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height;
+    color: @text-color;
+    padding-left: 9px;
+    margin-right: 3px;
+    border-right: @tab-border;
+    border-left: @tab-border;
+    transition: color 0.1s ease-in;
+    opacity: 0.6;
+    background-color: @tab-background-color;
+
+    &,
+    &:before {
+      background: @tab-background-color;
+      border-top: @tab-border;
+    }
+
+    &.active {
+      z-index: 1;
+      opacity: 1;
+      color: @text-color-selected;
+      border-top: @tab-border-selected;
+      border-right: @tab-border-selected;
+      border-left: @tab-border-selected;
+
+      &,
+      &:before {
+          // background: @tab-background-color-active;
+          height: @tab-height + 1px;
+          box-shadow: none;
+      }
+    }
+
+    // Modified Icon (the circle) -------------------
+    &.modified:not(:hover) .close-icon {
+      top: 50%;
+      right: @component-padding + 4px;
+    }
+
+    &.modified:hover .close-icon {
+      color: currentColor;
+    }
+    // Close Icon (the X) -------------------
+    .close-icon:hover {
+      color: @text-color-selected;
+    }
+
+    &.active .close-icon:hover {
+      color: @text-color;
+    }
+
+    &.is-dragging {
+      background: darken(@tab-background-color, 10%);
+      border-color: transparent;
+      opacity: .5;
+
+      & .close-icon {
+        visibility: hidden;
+      }
+    }
+  }
+}

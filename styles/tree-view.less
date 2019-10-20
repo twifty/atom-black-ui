@@ -1,0 +1,81 @@
+
+// Tree View
+// -------------------
+// Used to explore and open files in the current project.
+// Overrides: atom/tree-view
+.tree-view-resizer {
+  border-right: 1px solid @base-border-color;
+}
+
+.tree-view {
+  color: @text-color;
+  background-color: @tree-view-background-color;
+  .list-item.selected {
+    color: @text-color-selected;
+  }
+}
+
+.tree-view .entry::before {
+  margin-left: 12px;
+  margin-right: 12px;
+  background: @background-color-highlight !important;
+  cursor: pointer;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+  position: relative;
+  top: 0px;
+  cursor:pointer;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f0a3";
+  padding-left:5px;
+  padding-right:10px;
+  font-size:1.31em;
+}
+
+.list-item::before {
+  cursor:pointer !important;
+  display:inline-block;
+  padding-left:8px !important;
+  padding-right:12px !important;
+  font-size:13px !important;
+}
+
+// File icon overrides
+
+.light-red:before     { color: lighten(@red, 10%); }
+.medium-red:before    { color: @red; }
+.dark-red:before      { color: darken(@red, 10%); }
+
+.light-green:before   { color: lighten(@green, 10%); }
+.medium-green:before  { color: @green; }
+.dark-green:before    { color: darken(@green, 10%); }
+
+.light-yellow:before  { color: lighten(@yellow, 10%); }
+.medium-yellow:before { color: @yellow; }
+.dark-yellow:before   { color: darken(@yellow, 10%); }
+
+.light-blue:before    { color: lighten(@blue, 10%); }
+.medium-blue:before   { color: @blue; }
+.dark-blue:before     { color: darken(@blue, 10%); }
+
+.light-maroon:before  { color: lighten(@maroon, 10%); }
+.medium-maroon:before { color: @maroon; }
+.dark-maroon:before   { color: darken(@maroon, 10%); }
+
+.light-purple:before  { color: lighten(@purple, 10%); }
+.medium-purple:before { color: @purple; }
+.dark-purple:before   { color: darken(@purple, 10%); }
+
+.light-orange:before  { color: lighten(@orange, 10%); }
+.medium-orange:before { color: @orange; }
+.dark-orange:before   { color: darken(@orange, 10%); }
+
+.light-cyan:before    { color: lighten(@cyan, 10%); }
+.medium-cyan:before   { color: @cyan; }
+.dark-cyan:before     { color: darken(@cyan, 10%); }
+
+.light-pink:before    { color: lighten(@pink, 10%); }
+.medium-pink:before   { color: @pink; }
+.dark-pink:before     { color: darken(@pink, 10%); }

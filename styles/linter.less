@@ -1,0 +1,16 @@
+
+// Linter
+// -------------------
+// Used to color linter highlights
+
+atom-text-editor.editor .linter-highlight.linter-error {
+  background-image:
+    linear-gradient(45deg, transparent 65%, @text-color-error 80%, transparent 90%),
+    linear-gradient(135deg, transparent 5%, @text-color-error 15%, transparent 25%),
+    linear-gradient(135deg, transparent 45%, @text-color-error 55%, transparent 65%),
+    linear-gradient(45deg, transparent 25%, @text-color-error 35%, transparent 50%);
+}
+
+atom-text-editor.editor .linter-gutter.linter-gutter-error {
+  color: @text-color-error;
+}
