@@ -6,7 +6,8 @@
         }
 
         &.bottom {
-            border-top: 1px solid @base-border-color;
+            border-top: 1px solid @base-border-color-defined;
+            padding-top: 5px;
         }
         &.right {
             border-left: 1px solid @base-border-color;
@@ -16,6 +17,9 @@
             border-bottom: 1px solid @base-border-color;
         }
     }
+}
+.atom-dock-toggle-button-inner {
+  border: 1px solid @base-border-color-defined !important;
 }
 .atom-dock-resize-handle {
     position: absolute;
