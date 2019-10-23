@@ -1,0 +1,38 @@
+
+@conflict-color-ours:     @green; // usually magenta/purple-ish
+@conflict-color-theirs:   @magenta;
+@conflict-color-base:     desaturate(@blue, 100% );
+@conflict-color-modified: @blue;
+// @conflict-color-resolved: @syntax-color-added;
+
+.generate-conflicts(@name, @color) {
+  .github-Conflict@{name} {
+    margin-right: @component-padding;
+    background-color: @color !important;
+    &.cursor-line { background-color: fadein(@color, 10%) !important; }
+  }
+
+  .github-Conflict@{name}Banner {
+    margin-right: @component-padding;
+    background-color: @color !important;
+    &.cursor-line { background-color: fadein(@color, 10%) !important; }
+    &.github-ConflictUnmodifiedBanner span { color: fade(@color, 66%) !important; };
+  }
+
+  .github-Conflict@{name}Block {
+    color: contrast(@syntax-background-color, hsla(0,0%,0%,.66), hsla(0,0%,100%,.5));
+    background-color: fadein(@color, 20%) !important;
+
+    .btn {
+      color: white;
+      border-color: hsla(0,0%,0%,.15);
+      border: none;
+      background: darken(@blue, 45%) !important;
+    }
+  }
+}
+
+.generate-conflicts(Ours,      fade(@conflict-color-ours, 15%) );
+.generate-conflicts(Theirs,    fade(@conflict-color-theirs, 15%) );
+.generate-conflicts(Base,      fade(@conflict-color-base, 15%) );
+.generate-conflicts(Modified,  fade(@conflict-color-modified, 15%) );
