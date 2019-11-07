@@ -5,7 +5,9 @@
   "description": "A high contrast black UI theme",
   "keywords": [
     "ui",
-    "theme"
+    "theme",
+    "black",
+    "dark"
   ],
   "repository": "https://github.com/twifty/atom-black-ui",
   "license": "MIT",
